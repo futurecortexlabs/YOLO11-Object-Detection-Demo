@@ -1,6 +1,10 @@
 from functools import lru_cache
+import os
 from pathlib import Path
 from urllib.request import urlretrieve
+
+YOLO_CONFIG_DIR = Path("/tmp/Ultralytics")
+os.environ.setdefault("YOLO_CONFIG_DIR", str(YOLO_CONFIG_DIR))
 
 import gradio as gr
 import pandas as pd
@@ -170,4 +174,4 @@ with gr.Blocks(title="YOLO11 Object Detection Demo") as demo:
 
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0", server_port=7860)
