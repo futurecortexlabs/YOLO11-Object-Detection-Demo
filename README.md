@@ -70,3 +70,29 @@ pip install --upgrade --force-reinstall -r requirements.txt
 - 独自データで追加学習した検査モデルへの拡張
 
 今回はMVTec ADなどの外部データセットは使わず、学習も行いません。事前学習済みYOLOモデルによる推論のみを扱います。
+
+---
+
+## 📩 Contact / お問い合わせ
+
+Consultation Form
+
+相談フォーム
+
+https://forms.gle/SaWGZFu8J7DgbytL7
+
+---
+
+## 🌐 Follow My Work / 発信情報
+
+GitHub
+
+https://github.com/futurecortexlabs
+
+note
+
+https://note.com/future_cortex
+
+Hugging Face
+
+https://huggingface.co/FCTX
