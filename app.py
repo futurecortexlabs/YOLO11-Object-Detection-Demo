@@ -1,4 +1,6 @@
 from functools import lru_cache
+from pathlib import Path
+from urllib.request import urlretrieve
 
 import gradio as gr
 import pandas as pd
@@ -7,12 +9,27 @@ from ultralytics import YOLO
 
 
 MODEL_NAME = "yolo11n.pt"
+MODEL_PATH = Path(MODEL_NAME)
+MODEL_URL = (
+    "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt"
+)
+
+
+def download_model_if_needed():
+    """モデルファイルがない場合は、初回だけダウンロードします。"""
+    if MODEL_PATH.exists():
+        return
+
+    print(f"{MODEL_NAME} が見つからないため、モデルをダウンロードします...")
+    urlretrieve(MODEL_URL, MODEL_PATH)
+    print("モデルのダウンロードが完了しました。")
 
 
 @lru_cache(maxsize=1)
 def load_model():
     """YOLOモデルを一度だけ読み込みます。"""
-    return YOLO(MODEL_NAME)
+    download_model_if_needed()
+    return YOLO(str(MODEL_PATH))
 
 
 def create_empty_table():

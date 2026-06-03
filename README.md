@@ -42,6 +42,12 @@ python app.py
 
 起動後、ブラウザで表示されたローカルURLを開きます。
 
+PyTorch 2.6以降が入っている環境で重み読み込みエラーが出る場合は、次のコマンドで依存関係を入れ直してください。
+
+```powershell
+pip install --upgrade --force-reinstall -r requirements.txt
+```
+
 ## Hugging Face Spacesでの公開方法
 
 1. Hugging Faceにログインします。
