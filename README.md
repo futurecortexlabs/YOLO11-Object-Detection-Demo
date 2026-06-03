@@ -1,3 +1,15 @@
+---
+title: YOLO11 Object Detection Demo
+emoji: 🖼️
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: "4.44.1"
+python_version: "3.10"
+app_file: app.py
+pinned: false
+---
+
 # YOLO11 Object Detection Demo
 
 画像をアップロードすると、事前学習済みYOLO11モデルで物体検出を行うWebデモです。
